@@ -1,13 +1,11 @@
 ﻿
-
 using Depot.Business.Models;
-using Depot.Business.Services;
 using System;
 using System.Threading.Tasks;
 
 namespace Depot.Business.Interfaces
 {
-    public interface IFornecedorService
+    public interface IFornecedorService : IDisposable
     {
         Task Adicionar(Fornecedor fornecedor);
 

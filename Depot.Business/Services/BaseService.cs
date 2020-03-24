@@ -1,6 +1,8 @@
 ﻿
 
+using Depot.Business.Interfaces;
 using Depot.Business.Models;
+using Depot.Business.Notifications;
 using FluentValidation;
 using FluentValidation.Results;
 
@@ -8,6 +10,13 @@ namespace Depot.Business.Services
 {
   public abstract  class BaseService
     {
+        private readonly INotificador _notificador;
+
+        protected BaseService(INotificador notificador)
+        {
+            _notificador = notificador;
+        }
+
         protected void Notificar(ValidationResult validationResult)
         {
             foreach (var error in validationResult.Errors)
@@ -19,6 +28,8 @@ namespace Depot.Business.Services
         protected void Notificar(string mensagem)
         {
             //propagar esse erro até a camada de apresentação
+            _notificador.Handle(new Notificacao(mensagem));
+
         }
 
         protected bool ExecutarValidacao<TV, TE>(TV validacao, TE entidade) where TV : AbstractValidator<TE> where TE : Entity

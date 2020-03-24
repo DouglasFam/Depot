@@ -1,5 +1,7 @@
 ﻿using Depot.App.Extensions;
 using Depot.Business.Interfaces;
+using Depot.Business.Notifications;
+using Depot.Business.Services;
 using Depot.Data.Repository;
 using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +17,10 @@ namespace Depot.App.Configurations
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             services.AddSingleton<IValidationAttributeAdapterProvider, MoedaValidationAttributeAdapterProvider>();
+
+            services.AddScoped<INotificador, Notificador>();
+            services.AddScoped<IFornecedorService, FornecedorService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
 
             return services;
         }
