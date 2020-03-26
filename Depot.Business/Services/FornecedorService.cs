@@ -25,7 +25,7 @@ namespace Depot.Business.Services
         {
             // Validar o etado de entidade!
             if (!ExecutarValidacao(new FornecedorValidation(), fornecedor)
-                && !ExecutarValidacao(new EnderecoValidation(), fornecedor.Endereco)) return;
+                || !ExecutarValidacao(new EnderecoValidation(), fornecedor.Endereco)) return;
 
             if(_fornecedorRepository.Buscar(f => f.Documento == fornecedor.Documento).Result.Any())
             {
