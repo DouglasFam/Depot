@@ -105,5 +105,5 @@ function BuscaCep() {
 }
 
 $(document).ready(function () {
-    $("#msg_box").FadeOut(5000);
+    $("#msg_box").fadeOut(5000);
 });

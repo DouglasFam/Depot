@@ -1,7 +1,6 @@
 ﻿using Depot.Business.Models.Validations.Documentos;
 using FluentValidation;
 
-
 namespace Depot.Business.Models.Validations
 {
     public class FornecedorValidation : AbstractValidator<Fornecedor>
