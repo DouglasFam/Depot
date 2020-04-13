@@ -29,7 +29,7 @@ namespace Depot.Data.Mapping
                 .HasForeignKey(p => p.FornecedorId);
 
 
-            builder.ToTable("fornecedores");
+            builder.ToTable("Fornecedores");
         }
     }
 }

@@ -17,17 +17,13 @@ namespace Depot.App.Controllers
             return View();
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
 
         public IActionResult Privacy()
         {
             return View();
         }
 
-       [Route("erro/{id:lenghth(3,3)}")]
+       [Route("erro/{id:length(3,3)}")]
        public IActionResult Errors(int id)
         {
             var modelErro = new ErrorViewModel();

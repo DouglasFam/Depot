@@ -22,6 +22,8 @@ namespace Depot.Data.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(8)");
 
+            builder.ToTable("Enderecos");
+
         }
 
 

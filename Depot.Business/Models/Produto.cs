@@ -1,6 +1,5 @@
 ﻿using System;
-
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 
 namespace Depot.Business.Models
@@ -9,16 +8,15 @@ namespace Depot.Business.Models
     {
         public Guid FornecedorId { get; set; }
 
+        public Guid EstoqueId { get; set; }
+
+        public Guid GrupoId { get; set; }
+
         public string Nome { get; set; }
 
 
         public string Descricao { get; set; }
 
-
-        public string Imagem { get; set; }
-
-
-        public decimal Valor { get; set; }
 
         public DateTime DataCadastro { get; set; }
 
@@ -27,5 +25,11 @@ namespace Depot.Business.Models
 
         /*EF Relations */
         public Fornecedor Fornecedor { get; set; }
+
+        public Estoque Estoque { get; set; }
+
+        public GrupoProduto GrupoProduto { get; set; }
+
+        public IEnumerable<HistoricoProduto> HistoricoProduto { get; set; }
     }
 }
