@@ -11,9 +11,15 @@ namespace Depot.Business.Interfaces
     {
         Task<IEnumerable<Produto>> ObterProdutosPorFornecedor(Guid fornecedorId);
 
+        Task<IEnumerable<Produto>> ObterProdutosPorEstoque(Guid EstoqueId);
+
+        Task<IEnumerable<Produto>> ObterProdutosPorGrupo(Guid GrupoID);
+
         Task<IEnumerable<Produto>> ObterProdutosFornecedores();
 
         Task<Produto> ObterProdutoFornecedor(Guid id);
+
+
 
     }
 }

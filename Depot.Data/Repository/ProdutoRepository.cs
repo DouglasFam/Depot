@@ -26,9 +26,21 @@ namespace Depot.Data.Repository
                 
         }
 
+        public async Task<IEnumerable<Produto>> ObterProdutosPorEstoque(Guid EstoqueId)
+        {
+            return await Buscar(p => p.EstoqueId == EstoqueId);
+        }
+
+        public async Task<IEnumerable<Produto>> ObterProdutosPorGrupo(Guid GrupoID)
+        {
+            return await Buscar(p => p.GrupoId == GrupoID);
+        }
+
         public async Task<IEnumerable<Produto>> ObterProdutosPorFornecedor(Guid fornecedorId)
         {
             return await Buscar(p =>p.FornecedorId == fornecedorId);
         }
+
+        
     }
 }
